@@ -28,12 +28,12 @@
       "description": "Get this value by running [python3 string_session.py] in Pyrogram or heroku[IMPORTANT]"    
     },
     "HEROKU_APIKEY": {
-      "description": "very important for !update command to make javes up-to-date , get it from 'https://dashboard.heroku.com/account.",
+      "description": "very important for !update command to make Amebot up-to-date , get it from 'https://dashboard.heroku.com/account.",
       "value": ""  
     
     },
     "HEROKU_APPNAME": {
-      "description": "enter app name again here, very important for !update command to make javes up-to-date ,",
+      "description": "enter app name again here, very important for !update command to make Amebot up-to-date ,",
       "value": ""
       
 
