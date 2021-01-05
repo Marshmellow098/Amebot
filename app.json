@@ -1,0 +1,56 @@
+  
+{
+  "name": "Amebot",
+  "description": "Amebot is a Telegram userbot that running on Python , It help you to manage your telegram easily ",
+  "logo": "https://telegra.ph/file/9a8075c07a133f07305c6.jpg",
+  "keywords": [
+    "telegram",
+    "userbot",
+    "plugin",
+    "modular",
+    "productivity"
+  ],
+  "repository": "https://github.com/Marshmellow098/Amebot",
+  "website": "https://t.me/Mellowxd",
+  "success_url": "https://t.me/StarkTlV",
+  "stack": "container",
+  "env": {
+    "TELEGRAM_API_KEY": {
+      "description": "Get this value from my.telegram.org.[IMPORTANT]",
+      "value": ""
+    },
+    "TELEGRAM_API_HASH": {
+      "description": "Get this value from my.telegram.org.[IMPORTANT]",
+      "value": ""
+      
+    },
+    "TELEGRAM_STRING_SESSION": {
+      "description": "Get this value by running [python3 string_session.py] in Pyrogram or heroku[IMPORTANT]"    
+    },
+    "HEROKU_APIKEY": {
+      "description": "very important for !update command to make javes up-to-date , get it from 'https://dashboard.heroku.com/account.",
+      "value": ""  
+    
+    },
+    "HEROKU_APPNAME": {
+      "description": "enter app name again here, very important for !update command to make javes up-to-date ,",
+      "value": ""
+      
+
+
+     },
+     "BOT_TOKEN": {
+      "description": "Recommended for INLINE_MODE",
+      "value": "",
+      "required": true                  
+    },
+    
+             
+  
+  "addons": [{
+   "plan": "heroku-postgresql",
+   "options": {
+    "version": "12"
+   }
+  }]
+ }
