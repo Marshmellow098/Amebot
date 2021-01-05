@@ -7,10 +7,21 @@
 # General Public License, v.3.0. If a copy of the GPL was not distributed with this
 
 # file, You can obtain one at https://www.gnu.org/licenses/gpl-3.0.en.html.
-
+try :
 from telethon.sync import TelegramClient
 
-from telethon.sessions import StringSession
+from telethon.sessions import StringSession 
+except BaseException:
+
+    print("Telethon Not Found. Installing Now.")
+
+    import os
+
+    os.system("pip3 install telethon")
+
+    from telethon.sessions import StringSession
+
+    from telethon.sync import TelegramClient 
 
 print("""Please go-to my.telegram.org and get your app id and api hash""")
 ______     __    __     ______     ______     ______     ______  
