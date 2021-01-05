@@ -7,31 +7,64 @@
 # General Public License, v.3.0. If a copy of the GPL was not distributed with this
 
 # file, You can obtain one at https://www.gnu.org/licenses/gpl-3.0.en.html
-from telethon.sessions import StringSession
+try:
 
-    from telethon.sync import TelegramClient 
+    from telethon.sessions import StringSession
 
-print("""Please go-to my.telegram.org and get your app id and api hash""")
-______     __    __     ______     ______     ______     ______  
+    from telethon.sync import TelegramClient
 
-/\  __ \   /\ "-./  \   /\  ___\   /\  == \   /\  __ \   /\__  _\ 
+except BaseException:
 
-\ \  __ \  \ \ \-./\ \  \ \  __\   \ \  __<   \ \ \/\ \  \/_/\ \/ 
+    print("Telethon Not Found. Installing Now.")
 
- \ \_\ \_\  \ \_\ \ \_\  \ \_____\  \ \_____\  \ \_____\    \ \_\ 
+    import os
 
-  \/_/\/_/   \/_/  \/_/   \/_____/   \/_____/   \/_____/     \/_/ 
+    os.system("pip3 install telethon")
 
-                                                                  
+    from telethon.sessions import StringSession
+
+    from telethon.sync import TelegramClient
+
+ame = ______     __    __     ______     ______     ______     ______  
+     /\  __ \   /\ "-./  \   /\  ___\   /\  == \   /\  __ \   /\__  _\ 
+     \ \  __ \  \ \ \-./\ \  \ \  __\   \ \  __<   \ \ \/\ \  \/_/\ \/ 
+      \ \_\ \_\  \ \_\ \ \_\  \ \_____\  \ \_____\  \ \_____\    \ \_\ 
+       \/_/\/_/   \/_/  \/_/   \/_____/   \/_____/   \/_____/     \/_/ 
 
 
 
 
 
-APP_ID = int(input("Enter APP ID here: "))
 
-API_HASH = input("Enter API HASH here: ")
 
-with TelegramClient(StringSession(), APP_ID, API_HASH) as client:
 
-    print(client.session.save())
+  
+
+
+
+
+Running Fire On Termux 🔥🔥🔥...
+
+"""
+
+print(ame)
+
+API_ID = int(input("Enter APP ID here: \n"))
+
+API_HASH = input("Enter API HASH here: \n")
+
+client = TelegramClient(StringSession(), API_ID, API_HASH)
+
+with client:
+
+    session_str = client.session.save()
+
+    client.send_message("me", f"`{session_str}`")
+
+    client.send_message(
+
+        "THIS IS YOUR STRING SESSION \nJoin @javes_support For More Support."
+
+    )
+
+    print("⬆ Please Check Your Telegram Saved Message For Your String.")
