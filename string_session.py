@@ -13,7 +13,17 @@ from telethon.sync import TelegramClient
 from telethon.sessions import StringSession
 
 print("""Please go-to my.telegram.org and get your app id and api hash""")
+______     __    __     ______     ______     ______     ______  
 
+/\  __ \   /\ "-./  \   /\  ___\   /\  == \   /\  __ \   /\__  _\ 
+
+\ \  __ \  \ \ \-./\ \  \ \  __\   \ \  __<   \ \ \/\ \  \/_/\ \/ 
+
+ \ \_\ \_\  \ \_\ \ \_\  \ \_____\  \ \_____\  \ \_____\    \ \_\ 
+
+  \/_/\/_/   \/_/  \/_/   \/_____/   \/_____/   \/_____/     \/_/ 
+
+                                                                  
 
 
 
