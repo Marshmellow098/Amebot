@@ -43,7 +43,7 @@ ame = ______     __    __     ______     ______     ______     ______
 
 
 
-Running Fire On Termux 🔥🔥🔥...
+Starting Please wait......
 
 """
 
@@ -63,8 +63,8 @@ with client:
 
     client.send_message(
 
-        "THIS IS YOUR STRING SESSION \nJoin @javes_support For More Support."
+        "THIS IS YOUR STRING SESSION \nJoin @marshmellowsupport For More Support."
 
     )
 
-    print("⬆ Please Check Your Telegram Saved Message For Your String.")
+    print("⬆ Please Check Your Telegram Saved Message For Your String Store it safe.")
