@@ -15,7 +15,7 @@
   "success_url": "https://t.me/StarkTlV",
   "stack": "container",
   "env": {
-    "TELEGRAM_API_KEY": {
+    "TELEGRAM_APP_ID": {
       "description": "Get this value from my.telegram.org.[IMPORTANT]",
       "value": ""
     },
@@ -27,19 +27,19 @@
     "TELEGRAM_STRING_SESSION": {
       "description": "Get this value by running [python3 string_session.py] in Pyrogram or heroku[IMPORTANT]"    
     },
-    "HEROKU_APIKEY": {
+    "HEROKU_API_KEY": {
       "description": "very important for !update command to make Amebot up-to-date , get it from 'https://dashboard.heroku.com/account.",
       "value": ""  
     
     },
-    "HEROKU_APPNAME": {
+    "HEROKU_APP_NAME": {
       "description": "enter app name again here, very important for !update command to make Amebot up-to-date ,",
       "value": ""
       
 
 
      },
-     "BOT_TOKEN": {
+     "TG_BOT_TOKEN_BF_HER": {
       "description": "Recommended for INLINE_MODE",
       "value": "",
       "required": true                  
