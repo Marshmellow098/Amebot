@@ -31,14 +31,14 @@ else:
             api_hash=Var.API_HASH
         ).start(bot_token=Var.TG_BOT_TOKEN_BF_HER)
         print("Initialisation finished with no errors")
-        print("Starting Userbot")
+        print("Starting Amebot")
         bot.loop.run_until_complete(add_bot(Var.TG_BOT_USER_NAME_BF_HER))
         print("Startup Completed")
     else:
         bot.start()
     
 import glob
-path = 'userbot/plugins/*.py'
+path = 'amebot/plugins/*.py'
 files = glob.glob(path)
 for name in files:
     with open(name) as f:
