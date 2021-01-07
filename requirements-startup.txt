@@ -1,4 +1,7 @@
-Pillow>=8.0.0
+telethon
+setuptools
+wheel
+Pillow
 PyGithub
 aiofiles>=0.6.0
 appdirs>=1.4.4
