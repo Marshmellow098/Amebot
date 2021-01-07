@@ -1,7 +1,7 @@
 FROM Marshmellow098/amebot:latest
 
 #clonning repo 
-RUN git clone https://github.com/Marshmellow098/Amebot.git /root/amebot
+RUN git clone https://github.com/Marshmellow098/amebot.git /root/amebot
 #working directory 
 WORKDIR /root/userbot
 
