@@ -49,15 +49,13 @@
      "TG_BOT_TOKEN_BF_HER": {
       "description": "Recommended for INLINE_MODE",
       "value": "",
-      "required": true                  
-    },
-    
-             
+      "required": true
+      }
   },
   "addons": [{
-   "plan": "heroku-postgresql",
-   "options": {
-    "version": "12"
-   }
+    "plan": "heroku-postgresql",
+    "options": {
+      "version": "12"
+    }
   }]
- }
+}
