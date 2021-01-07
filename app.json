@@ -1,56 +1,55 @@
-  
 {
   "name": "Amebot",
   "description": "Amebot is a Telegram userbot that running on Python , It help you to manage your telegram easily ",
   "logo": "https://telegra.ph/file/9a8075c07a133f07305c6.jpg",
   "keywords": [
-    "telegram",
-    "userbot",
-    "plugin",
-    "modular",
-    "productivity"
+  "telegram",
+  "userbot",
+  "plugin",
+  "modular",
+  "productivity"
   ],
   "repository": "https://github.com/Marshmellow098/amebot.git",
   "website": "#chodo",
   "success_url": "construction left",
   "stack": "container",
   "env": {
-        "ENV": {
+  "ENV": {
 
-      "description": "Setting this to ANYTHING will enable heroku.",
+  "description": "Setting this to ANYTHING will enable heroku.",
 
-      "value": "ANYTHING"
+  "value": "ANYTHING"
 
-    },
-    "TELEGRAM_APP_ID": {
-      "description": "Get this value from my.telegram.org.[REQUIRED]",
-      "value": ""
-    },
-    "TELEGRAM_API_HASH": {
-      "description": "Get this value from my.telegram.org.[REQUIRED]",
-      "value": ""
+  },
+  "TELEGRAM_APP_ID": {
+  "description": "Get this value from my.telegram.org.[REQUIRED]",
+  "value": ""
+
+  },
+  "TELEGRAM_API_HASH": {
+  "description": "Get this value from my.telegram.org.[REQUIRED]",
+  "value": ""
       
-    },
-    "TELEGRAM_STRING_SESSION": {
-      "description": "Get this value by running [python3 string_session.py] in Pyrogram or heroku[REQUIRED]"    
-    },
-    "HEROKU_API_KEY": {
-      "description": "very important for !update command to make Amebot up-to-date , get it from 'https://dashboard.heroku.com/account.",
-      "value": ""  
+  },
+  "TELEGRAM_STRING_SESSION": {
+  "description": "Get this value by running [python3 string_session.py] in Pyrogram or heroku[REQUIRED]"
+ 
+  },
+  "HEROKU_API_KEY": {
+  "description": "very important for !update command to make Amebot up-to-date , get it from 'https://dashboard.heroku.com/account.",
+  "value": ""  
     
-    },
-    "HEROKU_APP_NAME": {
-      "description": "enter app name again here, very important for !update command to make Amebot up-to-date ,",
-      "value": ""
-      
+  },
+  "HEROKU_APP_NAME": {
+  "description": "enter app name again here, very important for !update command to make Amebot up-to-date ,",
+  "value": ""
 
-
-     },
-     "TG_BOT_TOKEN_BF_HER": {
-      "description": "Recommended for INLINE_MODE",
-      "value": "",
-      "required": true
-      }
+  },
+  "TG_BOT_TOKEN_BF_HER": {
+  "description": "Recommended for INLINE_MODE",
+  "value": "",
+  "required": true
+    }
   },
   "addons": [{
     "plan": "heroku-postgresql",
