@@ -1,4 +1,4 @@
-FROM Marshmellow098/Amebot:latest
+FROM Marshmellow098/amebot:latest
 
 #clonning repo 
 RUN git clone https://github.com/Marshmellow098/Amebot.git /root/amebot
