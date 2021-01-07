@@ -1,9 +1,9 @@
-from userbot import bot
+from amebot import bot
 from telethon import events
 from pathlib import Path
 from var import Var
-from userbot import LOAD_PLUG
-from userbot import CMD_LIST
+from amebot import LOAD_PLUG
+from amebot import CMD_LIST
 import re
 import logging
 import inspect
@@ -24,7 +24,7 @@ from typing import List
 
 ENV = bool(os.environ.get("ENV", False))
 if ENV:
-    from userbot.uniborgConfig import Config
+    from amebotconfig import Config
 else:
     if os.path.exists("config.py"):
         from config import Development as Config
@@ -37,7 +37,7 @@ def command(**args):
     file_test = Path(previous_stack_frame.filename)
     file_test = file_test.stem.replace(".py", "")
     if 1 == 0:
-        return print("stupidity at its best")
+        return print("lol")
     else:
         pattern = args.get("pattern", None)
         allow_sudo = args.get("allow_sudo", None)
@@ -104,24 +104,24 @@ def load_module(shortname):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        import userbot.utils
+        import amebot.utils
         import sys
         import importlib
-        from pathlib import Path
-        path = Path(f"userbot/plugins/{shortname}.py")
+        from pathlib import Pach
+        pach = Pach(f"userbot/plugins/{shortname}.py")
         name = "userbot.plugins.{}".format(shortname)
-        spec = importlib.util.spec_from_file_location(name, path)
+        spec = importlib.util.spec_from_file_location(name, pach)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         print("Successfully (re)imported "+shortname)
     else:
-        import userbot.utils
+        import amebot.utils
         import sys
         import importlib
-        from pathlib import Path
-        path = Path(f"userbot/plugins/{shortname}.py")
+        from pathlib import Pach
+        pach = Path(f"userbot/plugins/{shortname}.py")
         name = "userbot.plugins.{}".format(shortname)
-        spec = importlib.util.spec_from_file_location(name, path)
+        spec = importlib.util.spec_from_file_location(name, pach)
         mod = importlib.util.module_from_spec(spec)
         mod.bot = bot
         mod.tgbot =  bot.tgbot
@@ -129,17 +129,17 @@ def load_module(shortname):
         mod.command = command
         mod.logger = logging.getLogger(shortname)
         # support for uniborg
-        sys.modules["uniborg.util"] = userbot.utils
+        sys.modules["uniborg.util"] = amebot.utils
         mod.Config = Config
         mod.borg = bot
-        #support me in @marshmellowsupport
-        mod.mellow = bot 
-        mod.friday = bot
+        #support me in @Amebotsupport
+        mod.ame= bot 
+        
         # support for paperplaneextended
-        sys.modules["userbot.events"] = userbot.utils
+        sys.modules["userbot.events"] = amebot.utils
         spec.loader.exec_module(mod)
         # for imports
-        sys.modules["userbot.plugins."+shortname] = mod
+        sys.modules["amebot.plugins."+shortname] = mod
         print("Plugin installed "+shortname)
 
 def remove_plugin(shortname):
@@ -150,7 +150,7 @@ def remove_plugin(shortname):
             del LOAD_PLUG[shortname]
 
         except:
-            name = f"userbot.plugins.{shortname}"
+            name = f"amebot.plugins.{shortname}"
 
             for i in reversed(range(len(bot._event_builders))):
                 ev, cb = bot._event_builders[i]
@@ -158,65 +158,14 @@ def remove_plugin(shortname):
                     del bot._event_builders[i]
     except:
         raise ValueError
-        
-def friday_on_cmd(pattern=None, **args):
-    args["func"] = lambda e: e.via_bot_id is None
-    stack = inspect.stack()
-    previous_stack_frame = stack[1]
-    file_test = Path(previous_stack_frame.filename)
-    file_test = file_test.stem.replace(".py", "")
-    allow_sudo = args.get("allow_sudo", False)
 
-    # get the pattern from the decorator
-    if pattern is not None:
-        if pattern.startswith("\#"):
-            # special fix for snip.py
-            args["pattern"] = re.compile(pattern)
-        else:
-            
-            args["pattern"] = re.compile(Config.COMMAND_HAND_LER + pattern)
-            reg =Config.COMMAND_HAND_LER[1]
-            cmd = (reg +pattern).replace("$", "").replace("\\", "").replace("^", "")
 
-            try:
-                CMD_LIST[file_test].append(cmd)
-            except:
-                CMD_LIST.update({file_test: [cmd]})
-
-    args["outgoing"] = True
-    # should this command be available for other users?
-    if allow_sudo:
-        args["from_users"] = list(Config.SUDO_USERS)
-        # Mutually exclusive with outgoing (can only set one of either).
-        args["incoming"] = True
-        del args["allow_sudo"]
-
-    # error handling condition check
-    elif "incoming" in args and not args["incoming"]:
-        args["outgoing"] = True
-
-    # add blacklist chats, UB should not respond in these chats
-    args["blacklist_chats"] = True
-    black_list_chats = list(Config.UB_BLACK_LIST_CHAT)
-    if len(black_list_chats) > 0:
-        args["chats"] = black_list_chats
-
-    # add blacklist chats, UB should not respond in these chats
-    allow_edited_updates = False
-    if "allow_edited_updates" in args and args["allow_edited_updates"]:
-        allow_edited_updates = args["allow_edited_updates"]
-        del args["allow_edited_updates"]
-
-    # check if the plugin should listen for outgoing 'messages'
-    is_message_enabled = True
-
-    return events.NewMessage(**args)
 
 def admin_cmd(pattern=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
     stack = inspect.stack()
     previous_stack_frame = stack[1]
-    file_test = Path(previous_stack_frame.filename)
+    file_test = Pach(previous_stack_frame.filename)
     file_test = file_test.stem.replace(".py", "")
     allow_sudo = args.get("allow_sudo", False)
 
@@ -265,11 +214,11 @@ def admin_cmd(pattern=None, **args):
 
     return events.NewMessage(**args)
 
-def mellow_cmd(pattern=None, **args):
+def ame_cmd(pattern=None, **args):
     args["func"] = lambda e: e.via_bot_id is None
     stack = inspect.stack()
     previous_stack_frame = stack[1]
-    file_test = Path(previous_stack_frame.filename)
+    file_test = Pach(previous_stack_frame.filename)
     file_test = file_test.stem.replace(".py", "")
     allow_sudo = args.get("allow_sudo", False)
 
@@ -325,7 +274,7 @@ def register(**args):
     """ Register a new event. """
     stack = inspect.stack()
     previous_stack_frame = stack[1]
-    file_test = Path(previous_stack_frame.filename)
+    file_test = Pach(previous_stack_frame.filename)
     file_test = file_test.stem.replace(".py", "")
     pattern = args.get('pattern', None)
     disable_edited = args.get('disable_edited', True)
