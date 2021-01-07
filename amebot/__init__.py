@@ -175,7 +175,7 @@ binaries = {
     "bin/cmrudl"
 }
 
-for binary, path in binaries.items():
+for binary, pach in binaries.items():
     downloader = SmartDL(binary, path, progress_bar=False)
     downloader.start()
     os.chmod(path, 0o755)
