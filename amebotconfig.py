@@ -10,6 +10,8 @@ class Var(object):
 
     TELEGRAM_STRING_SESSION = os.environ.get("STRING_SESSION", None)
 
+    ALIVE_PIC = os.environ.get("ALIVE_PIC",None)
+
     DB_URI = os.environ.get("DATABASE_URL", None)
 
     TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", None)
