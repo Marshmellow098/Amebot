@@ -13,10 +13,10 @@ DELETE_TIMEOUT = 5
 
 thumb_image_path = "./Resources/PicsArt_12-07-03.35.32.jpg"
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Marshmellow"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Amebot"
 
 
-@bot.on(mellow_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
+@bot.on(ame_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
 async def send(event):
     if event.fwd_from:
         return
@@ -38,7 +38,7 @@ async def send(event):
         end = datetime.now()
         time_taken_in_ms = (end - start).seconds
         await pro.edit(
-            f"**==> Plugin name:** `{input_str}`\n**==> Uploaded in {time_taken_in_ms} seconds only.**\n**==> Uploaded by:** [{DEFAULTUSER}](tg://user?id={hmm})\n"
+            f"**==> Plugin name:** `{input_str}`\n**==> Uploaded in {time_taken_in_ms} seconds only.**\n**==> Uploaded by:** [{DEFAULTUSER}](tg://user?id={hmm})**join @Amebotsupport**\n"
         )
         await asyncio.sleep(DELETE_TIMEOUT)
         await event.delete()
@@ -46,7 +46,7 @@ async def send(event):
         await edit_or_reply(event, "**404**: Write correct file name")
 
 
-@bot.on(mellow_cmd(pattern="install"))
+@bot.on(ame_cmd(pattern="install"))
 async def install(event):
     if event.fwd_from:
         return
@@ -63,14 +63,14 @@ async def install(event):
                 shortname = path1.stem
                 load_module(shortname.replace(".py", ""))
                 await event.edit(
-                    "`{}` successfully installed\nJoin @marshmellowuserbot".format(
+                    "`{}` The plugin has been Successfully installed\nJoin @Amebotsupport".format(
                         os.path.basename(downloaded_file_name)
                     )
                 )
             else:
                 os.remove(downloaded_file_name)
                 await event.edit(
-                    "**Plugin cannot be installed or is pre-installed.**"
+                    "**Plug-in is already installed.**"
                 )
         except Exception as e:  # pylint:disable=C0103,W0703
             await event.edit(str(e))
@@ -79,7 +79,7 @@ async def install(event):
     await event.delete()
 
 
-@bot.on(mellow_cmd(pattern=r"unload (?P<shortname>\w+)$"))
+@bot.on(ame_cmd(pattern=r"unload (?P<shortname>\w+)$"))
 async def unload(event):
     if event.fwd_from:
         return
@@ -95,7 +95,7 @@ async def unload(event):
         )
 
 
-@bot.on(mellow_cmd(pattern=r"load (?P<shortname>\w+)$"))
+@bot.on(ame_cmd(pattern=r"load (?P<shortname>\w+)$"))
 async def load(event):
     if event.fwd_from:
         return
@@ -109,6 +109,6 @@ async def load(event):
         await event.edit(f"Successfully loaded {shortname}")
     except Exception as e:
         await event.edit(
-            f"Sorry,{shortname} can not be loaded\nbecause of the following error.\n{str(e)}"
+            f"Sorry,{shortname} can't be installed\ndue to the following error.\n{str(e)}"
         )
 
