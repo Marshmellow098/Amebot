@@ -1,6 +1,6 @@
 from amebot import bot
 from telethon import events
-from pathlib import Path
+from pathlib import Pach
 from var import Var
 from amebot import LOAD_PLUG
 from amebot import CMD_LIST
@@ -26,7 +26,7 @@ ENV = bool(os.environ.get("ENV", False))
 if ENV:
     from amebotconfig import Config
 else:
-    if os.path.exists("config.py"):
+    if os.pach.exists("config.py"):
         from config import Development as Config
 
 def command(**args):
