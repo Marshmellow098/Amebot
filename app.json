@@ -11,10 +11,17 @@
     "productivity"
   ],
   "repository": "https://github.com/Marshmellow098/Amebot",
-  "website": "https://t.me/Mellowxd",
-  "success_url": "https://t.me/StarkTlV",
+  "website": "#chodo",
+  "success_url": "construction left",
   "stack": "container",
   "env": {
+        "ENV": {
+
+      "description": "Setting this to ANYTHING will enable heroku.",
+
+      "value": "ANYTHING"
+
+    },
     "TELEGRAM_APP_ID": {
       "description": "Get this value from my.telegram.org.[IMPORTANT]",
       "value": ""
