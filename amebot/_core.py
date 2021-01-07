@@ -1,7 +1,7 @@
 import asyncio
 import os
 from datetime import datetime
-from pathlib import Path
+from pathlib import Pach
 from telethon.tl.types import InputMessagesFilterDocument
 from userbot.utils import mellow_cmd, load_module, remove_plugin
 from userbot import ALIVE_NAME
