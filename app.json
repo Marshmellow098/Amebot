@@ -23,16 +23,16 @@
 
     },
     "TELEGRAM_APP_ID": {
-      "description": "Get this value from my.telegram.org.[IMPORTANT]",
+      "description": "Get this value from my.telegram.org.[REQUIRED]",
       "value": ""
     },
     "TELEGRAM_API_HASH": {
-      "description": "Get this value from my.telegram.org.[IMPORTANT]",
+      "description": "Get this value from my.telegram.org.[REQUIRED]",
       "value": ""
       
     },
     "TELEGRAM_STRING_SESSION": {
-      "description": "Get this value by running [python3 string_session.py] in Pyrogram or heroku[IMPORTANT]"    
+      "description": "Get this value by running [python3 string_session.py] in Pyrogram or heroku[REQUIRED]"    
     },
     "HEROKU_API_KEY": {
       "description": "very important for !update command to make Amebot up-to-date , get it from 'https://dashboard.heroku.com/account.",
