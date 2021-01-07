@@ -51,9 +51,8 @@
       "value": "",
       "required": true
       },
-      "addons": [{
+      "addons": {
       "plan": "heroku-postgresql",
       "options": {
       "version": "12"
-       ]
      }
