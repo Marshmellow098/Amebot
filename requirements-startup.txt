@@ -19,7 +19,7 @@ recursive-compression>=3.4
 emoji>=0.6.0
 gTTS-token>=1.1.4
 gTTS>=2.2.1
-gitpython>=3.2.12
+gitpython
 glitch_this>=1.0.2
 google-api-python-client==1.12.8
 google-auth-oauthlib==0.4.2
