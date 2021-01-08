@@ -3,12 +3,12 @@ import os
 import sys
 from telethon.sessions import StringSession
 from telethon import TelegramClient
-from userbot.helper import functions as darkdef
+from amebot.helper import functions as darkdef
 from var import Var
 
 os.system("pip install --upgrade pip")
-if Var.STRING_SESSION:
-    session_name = str(Var.STRING_SESSION)
+if Var.TELEGRAM_STRING_SESSION:
+    session_name = str(Var.TELEGRAM_STRING_SESSION)
     bot = TelegramClient(StringSession(session_name), Var.APP_ID, Var.API_HASH)
     ame = TelegramClient(StringSession(session_name), Var.APP_ID, Var.API_HASH)
 else:
