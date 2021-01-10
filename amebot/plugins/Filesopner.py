@@ -1,0 +1,51 @@
+"""plugin made for reading nd  exploting message in tg {i}reveal <reply to file>"""
+# originally made by @ItzSjDude All Rights reserved!!
+#  Added Paste System by @danish_00
+# All Credits - @ItzSjDude  #Added Paste System by @danish_00
+# @ItzSjDude
+# @ItzSjDude
+#  Added Paste System by @danish_00
+
+import os, requests, re
+from userbot import bot
+from userbot.utils import amebot_cmd
+
+@mellow.on(amebot_cmd(pattern=r"open", outgoing=True))
+async def _(event):
+    b = await event.client.download_media(await event.get_reply_message())
+    a = open(b, "r")
+    c = a.read()
+    a.close()
+    a = await event.reply("Reading file...")
+    if len(c) >= 4096:            
+            await event.edit("output file too large lemme paste it 😜😜")#hehe
+            out = c
+            url = "https://del.dog/documents"
+            r = requests.post(url, data=out.encode("UTF-8")).json()
+            url = f"https://del.dog/{r['key']}"
+            await event.edit(
+                f" Output file is too large Not supported By Telegram\n**So Pasted to** [Dog Bin]({url}) 😁😁", link_preview=False)            
+            await a.delete()
+    else:
+        await event.client.send_message(event.chat_id, f"{c}")
+        await a.delete()
+    os.remove(b)
+
+
+@mellow.on(amebot_cmd(pattern="doc ?(.*)"))
+async def get(event):
+    name = event.text[5:]
+    if name is None:
+        await event.edit("reply to text message as .ttf <file name>")
+        return
+    m = await event.get_reply_message()
+    if m.text:
+        with open(name, "w") as f:
+            f.write(m.message)
+        await event.delete()
+        await event.client.send_file(event.chat_id, name, force_document=True)
+        os.remove(name)
+    else:
+        await event.edit("reply to text message as .doc <file name.extension>")
+
+
