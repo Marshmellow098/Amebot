@@ -2,12 +2,12 @@
 # please give credits if you wanna kang this..
 
 from telethon.tl.types import InputMessagesFilterDocument
-from ..utils import remove_plugin, load_module, amebot_mcd
+from ..utils import remove_plugin, load_module, amebot_cmd
 from pathlib import Path
 import userbot.utils
 import os
 
-@borg.on(amebot_mcd(pattern=r"installall$"))
+@borg.on(amebot_cmd(pattern=r"installall$"))
 async def install(event):
  if event.fwd_from:
   return
