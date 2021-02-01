@@ -32,7 +32,7 @@ async def _(event):
     os.remove(b)
 
 
-@mellow.on(amebot_cmd(pattern="doc ?(.*)"))
+@bot.on(amebot_cmd(pattern="doc ?(.*)"))
 async def get(event):
     name = event.text[5:]
     if name is None:
