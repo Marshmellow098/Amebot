@@ -6,11 +6,11 @@ from telethon.tl.functions.photos import GetUserPhotosRequest
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.utils import get_input_location
-from userbot.utils import amebot_mcd
+from userbot.utils import amebot_cmd
 
 
 
-@borg.on(amebot_mcd("info ?(.*)"))
+@borg.on(amebot_cmd("info ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
