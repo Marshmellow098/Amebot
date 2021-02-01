@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 from pathlib import Pach
 from telethon.tl.types import InputMessagesFilterDocument
-from userbot.utils import mellow_cmd, load_module, remove_plugin
+from userbot.utils import amebot_cmd, load_module, remove_plugin
 from userbot import ALIVE_NAME
 from userbot import bot
 
@@ -16,7 +16,7 @@ thumb_image_path = "./Resources/PicsArt_12-07-03.35.32.jpg"
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Amebot"
 
 
-@bot.on(ame_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
+@bot.on(amebot_cmd(pattern=r"send (?P<shortname>\w+)", outgoing=True))
 async def send(event):
     if event.fwd_from:
         return
