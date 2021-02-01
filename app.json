@@ -22,17 +22,17 @@
 
   },
   "TELEGRAM_APP_ID": {
-  "description": "Get this value from my.telegram.org.[REQUIRED]",
+  "description": "Get this value from my.telegram.org.",
   "value": ""
 
   },
   "TELEGRAM_API_HASH": {
-  "description": "Get this value from my.telegram.org.[REQUIRED]",
+  "description": "Get this value from my.telegram.org.",
   "value": ""
       
   },
   "TELEGRAM_STRING_SESSION": {
-  "description": "Get this value by running [python3 string_session.py] in Pyrogram or heroku[REQUIRED]"
+  "description": "Get this value by running [python3 string_session.py] in Pyrogram or heroku"
  
   },
   "HEROKU_API_KEY": {
