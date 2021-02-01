@@ -6,11 +6,11 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from telethon.tl.functions.account import UpdateNotifySettingsRequest
 
-from userbot.utils import amebot_mcd
+from userbot.utils import amebot_cmd
 
 
 
-@borg.on(amebot_mcd("sg ?(.*)"))
+@borg.on(amebot_cmd("sg ?(.*)"))
 
 async def _(event):
 
