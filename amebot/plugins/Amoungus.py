@@ -6,13 +6,13 @@
 
 import asyncio
 
-from userbot.utils import mellow_cmd, edit_or_reply
+from userbot.utils import amebot_cmd, edit_or_reply
 from userbot import ALIVE_NAME, CMD_HELP
 
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Marsh mellow"
+DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Amebot user"
 
 
-@bot.on(mellow_cmd(pattern="imp(|n) (.*)", outgoing=True))
+@bot.on(amebot_cmd(pattern="imp(|n) (.*)", outgoing=True))
 async def _(event):
     kraken = bot.uid
     USERNAME = f"tg://user?id={kraken}"
